@@ -8,3 +8,27 @@ The Coursera Exploratory Data Analysis lectures covering hierarchial clustering 
 Each observation site has latitude and longitude coordinates, which allows one to plot a poor man's map of the United States. The example here simply identifies the four major landmasses that appear in the data: Alaska, Hawaii, Puerto Rico, and the lower 48 states.
 
 The function missing from the lectures is the cutree() function, which this example demonstrates.
+
+## Key Code Segments:
+
+### Identify landmasses with h-clustering
+Some trial and error determined that the centroid method correctly groups the landmasses
+```
+hc <- hclust(dist(pm25s[,1:2]), method = "centroid")
+```
+
+### Convert the hclust results into a usable factor
+cutree() is the key function missing from the Coursera - DSS EDA lectures
+```
+landmass <- cutree(hc, k=4)
+pm25s$landmass <- as.factor(landmass)
+levels(pm25s$landmass) <- c("PR", "HI", "48", "AK")
+```
+
+### Plot the results
+```
+g <- ggplot(pm25s, aes(lon,lat, color=landmass))
+g+geom_point()
+```
+
+![alt text]( "Landmasses")
