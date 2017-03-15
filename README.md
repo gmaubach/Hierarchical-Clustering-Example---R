@@ -11,6 +11,14 @@ The function missing from the lectures is the cutree() function, which this exam
 
 ## Key Code Segments:
 
+### Plot without landmasses
+```
+g <- ggplot(pm25s, aes(lon,lat))
+g+geom_point()
+```
+
+![alt text](https://github.com/wstreyer/Hierarchial-Clustering-Example---R/blob/master/nolandmasses.png "No Landmasses")
+
 ### Identify landmasses with h-clustering
 Some trial and error determined that the centroid method correctly groups the landmasses
 ```
@@ -25,7 +33,7 @@ pm25s$landmass <- as.factor(landmass)
 levels(pm25s$landmass) <- c("PR", "HI", "48", "AK")
 ```
 
-### Plot the results
+### Plot with landmasses identified
 ```
 g <- ggplot(pm25s, aes(lon,lat, color=landmass))
 g+geom_point()
