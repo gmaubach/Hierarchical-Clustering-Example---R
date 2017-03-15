@@ -26,7 +26,7 @@ hc <- hclust(dist(pm25s[,1:2]), method = "centroid")
 ```
 
 ### Convert the hclust results into a usable factor
-cutree() is the key function missing from the Coursera - DSS EDA lectures
+cutree() is the key function missing from the Coursera - DSS EDA lectures. The 'k' parameter describes how many clusters should be formed from the hclust tree. Given that these particular clusters are familiar to most users, the correct number of clusters is 4.
 ```
 landmass <- cutree(hc, k=4)
 pm25s$landmass <- as.factor(landmass)
