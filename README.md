@@ -31,4 +31,4 @@ g <- ggplot(pm25s, aes(lon,lat, color=landmass))
 g+geom_point()
 ```
 
-![alt text]( "Landmasses")
+![alt text](https://github.com/wstreyer/Hierarchial-Clustering-Example---R/blob/master/landmasses.png "Landmasses")
