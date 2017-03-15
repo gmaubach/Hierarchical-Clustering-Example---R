@@ -6,7 +6,7 @@
 ## Example of hierarchical clustering used to generate factors that can then be
 ## used to modify data.frames and enhance plots of those data.
 
-## The Coursera Exploratory Data Analysis lectures covering hierarchial clustering
+## The Coursera Exploratory Data Analysis lectures covering hierarchical clustering
 ## do not describe how to actually assign records in a database to a cluster.
 ## This example shows how to accomplish that with a simple example using EPA 
 ## pollution data from 2008.
