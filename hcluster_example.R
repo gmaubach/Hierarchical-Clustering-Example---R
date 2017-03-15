@@ -42,7 +42,7 @@ pm25s <- pm25s %>% group_by(lat, lon) %>%summarize(pm25 = mean(pm25))
 
 ##Plot the map without clustering first if you wish
 #g <- ggplot(pm25s, aes(lon,lat))
-#g+geom_point()
+#g+geom_point()+coord_fixed()
 
 #Identify landmasses with h-clustering
 #Some trial and error determined that the centroid method correctly groups the landmasses
@@ -55,5 +55,5 @@ pm25s$landmass <- as.factor(landmass)
 levels(pm25s$landmass) <- c("PR", "HI", "48", "AK")
 
 g <- ggplot(pm25s, aes(lon,lat, color=landmass))
-g+geom_point()
+g+geom_point()+coord_fixed()
 
